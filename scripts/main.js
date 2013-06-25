@@ -22,8 +22,8 @@ require([
 	container.on('keyup','.try-creatable' ,function(e){
 		var htmlTextbox = $('.try-html');
 		try{
-			htmlTextbox.val(Creatable.create(eval(e.target.value)).innerHTML);
-			console.log(Creatable.create(eval(e.target.value)));
+			Creatable.setDocument(Creatable.emulatedDocument)
+			htmlTextbox.val(Creatable.create(eval(e.target.value)).toString());
 		}
 		catch(e){
 			htmlTextbox.val('Enter Valid Creatable Array Syntax...');
