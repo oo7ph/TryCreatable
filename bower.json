@@ -1,0 +1,10 @@
+{
+	"name": "Try Creatable",
+	"version": "0.0.0",
+	"dependencies": {
+		"jquery": "1.9.x",
+		"requirejs": "2.1.6",
+		"creatable": "https://raw.github.com/RaineOrShine/creatable/master/deploy/creatable-3.0.1.js",
+		"underscore-amd": "1.4.4"
+	}
+}
