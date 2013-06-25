@@ -11,9 +11,23 @@ require([
 	'creatable'
 
 ], function($){
+	var container = $('div.container');
 	var build = [[
 		['textarea.try-creatable'],
 		['textarea.try-html'],				
 	]];
-	$('div.container').html(Creatable.create(build));
+	
+	container.html(Creatable.create(build));
+	
+	container.on('keyup','.try-creatable' ,function(e){
+		var htmlTextbox = $('.try-html');
+		try{
+			htmlTextbox.val(Creatable.create(eval(e.target.value)).innerHTML);
+			console.log(Creatable.create(eval(e.target.value)));
+		}
+		catch(e){
+			htmlTextbox.val('Enter Valid Creatable Array Syntax...');
+		}
+	});
+	
 });
