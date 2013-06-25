@@ -5,6 +5,7 @@
 		"jquery": "1.9.x",
 		"requirejs": "2.1.6",
 		"creatable": "https://raw.github.com/RaineOrShine/creatable/master/deploy/creatable-3.0.1.js",
-		"underscore-amd": "1.4.4"
+		"underscore-amd": "1.4.4",
+		"codemirror": "3.13.0"
 	}
 }
