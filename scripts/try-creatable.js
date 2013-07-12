@@ -21,8 +21,8 @@ require([
 	'codemirror-formatting'
 
 ], function($){
-	function renderCodeMirror(){
-		var creatableCodeMirror = CodeMirror.fromTextArea(document.getElementById('creatableMarkup'), {
+	function renderCodeMirror(creatableEl, htmlEl){
+		var creatableCodeMirror = CodeMirror.fromTextArea(creatableEl, {
 			theme: 'blackboard',
 			height: "350px",
 		    autoMatchParens: true,
@@ -32,7 +32,7 @@ require([
 				typescript: true
 			}
 		});
-		var htmlCodeMirror = CodeMirror.fromTextArea(document.getElementById('htmlMarkup'), {
+		var htmlCodeMirror = CodeMirror.fromTextArea(htmlEl, {
 			theme: 'blackboard',
 			height: "350px",
 		    autoMatchParens: true,
@@ -56,10 +56,7 @@ require([
 		creatableCodeMirror.setValue("['.foo',[\n\t['p',[\n\t\t['a', { href:'google.com' }, 'google']\n\t]]\n]]");
 	};
 	
-	$('div.container').html(Creatable.create([[
-		['textarea#creatableMarkup'],
-		['textarea#htmlMarkup'],				
-	]]));
-	renderCodeMirror();
-	
+	return {
+		render: renderCodeMirror
+	}
 });
